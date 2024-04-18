@@ -1,0 +1,111 @@
+
+crying creature layers2psd.png
+size: 1901,873
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer64
+  rotate: false
+  xy: 1081, 72
+  size: 243, 266
+  orig: 243, 266
+  offset: 0, 0
+  index: -1
+background crying hand
+  rotate: true
+  xy: 1706, 544
+  size: 155, 165
+  orig: 155, 165
+  offset: 0, 0
+  index: -1
+background lower hand
+  rotate: false
+  xy: 834, 7
+  size: 245, 256
+  orig: 245, 256
+  offset: 0, 0
+  index: -1
+crying hand
+  rotate: false
+  xy: 1692, 377
+  size: 154, 165
+  orig: 154, 165
+  offset: 0, 0
+  index: -1
+hair
+  rotate: false
+  xy: 2, 153
+  size: 283, 718
+  orig: 283, 718
+  offset: 0, 0
+  index: -1
+hair strains
+  rotate: false
+  xy: 287, 226
+  size: 312, 645
+  orig: 312, 645
+  offset: 0, 0
+  index: -1
+leg back
+  rotate: true
+  xy: 601, 265
+  size: 606, 390
+  orig: 606, 390
+  offset: 0, 0
+  index: -1
+leg lower
+  rotate: false
+  xy: 406, 26
+  size: 426, 198
+  orig: 426, 198
+  offset: 0, 0
+  index: -1
+leg upper
+  rotate: true
+  xy: 993, 340
+  size: 531, 326
+  orig: 531, 326
+  offset: 0, 0
+  index: -1
+neck
+  rotate: false
+  xy: 1706, 701
+  size: 193, 170
+  orig: 193, 170
+  offset: 0, 0
+  index: -1
+shoulder
+  rotate: true
+  xy: 244, 81
+  size: 70, 160
+  orig: 70, 160
+  offset: 0, 0
+  index: -1
+stomach
+  rotate: true
+  xy: 1326, 5
+  size: 343, 378
+  orig: 343, 378
+  offset: 0, 0
+  index: -1
+toe
+  rotate: false
+  xy: 2, 2
+  size: 240, 149
+  orig: 240, 149
+  offset: 0, 0
+  index: -1
+upper arm
+  rotate: false
+  xy: 1706, 14
+  size: 153, 361
+  orig: 153, 361
+  offset: 0, 0
+  index: -1
+upper torso
+  rotate: false
+  xy: 1321, 350
+  size: 369, 521
+  orig: 369, 521
+  offset: 0, 0
+  index: -1

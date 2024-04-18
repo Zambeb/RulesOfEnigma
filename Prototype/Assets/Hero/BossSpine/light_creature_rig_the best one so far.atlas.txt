@@ -1,0 +1,167 @@
+
+light_creature_rig_the best one so far.png
+size: 1884,375
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+head main right
+  rotate: true
+  xy: 1032, 120
+  size: 253, 213
+  orig: 253, 213
+  offset: 0, 0
+  index: -1
+left arm bot
+  rotate: true
+  xy: 784, 4
+  size: 100, 193
+  orig: 100, 193
+  offset: 0, 0
+  index: -1
+left arm top
+  rotate: false
+  xy: 1307, 135
+  size: 81, 238
+  orig: 81, 238
+  offset: 0, 0
+  index: -1
+left foot
+  rotate: false
+  xy: 1559, 35
+  size: 118, 129
+  orig: 118, 129
+  offset: 0, 0
+  index: -1
+left hand
+  rotate: false
+  xy: 1343, 2
+  size: 103, 131
+  orig: 103, 131
+  offset: 0, 0
+  index: -1
+left hand fingers
+  rotate: true
+  xy: 1198, 3
+  size: 115, 103
+  orig: 115, 103
+  offset: 0, 0
+  index: -1
+left hand thumb
+  rotate: false
+  xy: 1303, 9
+  size: 38, 110
+  orig: 38, 110
+  offset: 0, 0
+  index: -1
+left leg bot
+  rotate: false
+  xy: 1247, 121
+  size: 58, 252
+  orig: 58, 252
+  offset: 0, 0
+  index: -1
+left leg top
+  rotate: false
+  xy: 1449, 166
+  size: 64, 207
+  orig: 64, 207
+  offset: 0, 0
+  index: -1
+neck
+  rotate: true
+  xy: 1448, 6
+  size: 130, 109
+  orig: 130, 109
+  offset: 0, 0
+  index: -1
+projector
+  rotate: false
+  xy: 1575, 179
+  size: 181, 194
+  orig: 181, 194
+  offset: 0, 0
+  index: -1
+rib cage body
+  rotate: true
+  xy: 1679, 3
+  size: 174, 193
+  orig: 174, 193
+  offset: 0, 0
+  index: -1
+right foot
+  rotate: true
+  xy: 1758, 250
+  size: 123, 124
+  orig: 123, 124
+  offset: 0, 0
+  index: -1
+right hand bot
+  rotate: false
+  xy: 1390, 138
+  size: 57, 235
+  orig: 57, 235
+  offset: 0, 0
+  index: -1
+right hand top
+  rotate: true
+  xy: 979, 6
+  size: 103, 217
+  orig: 103, 217
+  offset: 0, 0
+  index: -1
+right leg bot
+  rotate: false
+  xy: 784, 106
+  size: 93, 267
+  orig: 93, 267
+  offset: 0, 0
+  index: -1
+right leg top
+  rotate: false
+  xy: 1515, 166
+  size: 58, 207
+  orig: 58, 207
+  offset: 0, 0
+  index: -1
+spine
+  rotate: true
+  xy: 532, 8
+  size: 27, 225
+  orig: 27, 225
+  offset: 0, 0
+  index: -1
+torso
+  rotate: false
+  xy: 879, 111
+  size: 151, 262
+  orig: 151, 262
+  offset: 0, 0
+  index: -1
+wires back body
+  rotate: false
+  xy: 348, 37
+  size: 185, 336
+  orig: 185, 336
+  offset: 0, 0
+  index: -1
+wires back head
+  rotate: true
+  xy: 535, 40
+  size: 333, 247
+  orig: 333, 247
+  offset: 0, 0
+  index: -1
+wires back long
+  rotate: true
+  xy: 348, 5
+  size: 30, 182
+  orig: 30, 182
+  offset: 0, 0
+  index: -1
+wires general
+  rotate: false
+  xy: 2, 3
+  size: 344, 370
+  orig: 344, 370
+  offset: 0, 0
+  index: -1

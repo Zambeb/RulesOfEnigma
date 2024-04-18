@@ -1,0 +1,125 @@
+
+plswork.png
+size: 1426,1045
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+backpack main
+  rotate: false
+  xy: 2, 345
+  size: 485, 698
+  orig: 485, 698
+  offset: 0, 0
+  index: -1
+backpack wires
+  rotate: false
+  xy: 489, 348
+  size: 360, 695
+  orig: 360, 695
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 851, 566
+  size: 323, 477
+  orig: 323, 477
+  offset: 0, 0
+  index: -1
+boot left
+  rotate: false
+  xy: 1207, 528
+  size: 167, 165
+  orig: 167, 165
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 2
+  size: 475, 341
+  orig: 475, 341
+  offset: 0, 0
+  index: -1
+left arm bot
+  rotate: true
+  xy: 851, 352
+  size: 212, 354
+  orig: 212, 354
+  offset: 0, 0
+  index: -1
+left arm up
+  rotate: true
+  xy: 1171, 216
+  size: 134, 253
+  orig: 134, 253
+  offset: 0, 0
+  index: -1
+left leg bot
+  rotate: false
+  xy: 721, 54
+  size: 136, 292
+  orig: 136, 292
+  offset: 0, 0
+  index: -1
+left leg up
+  rotate: true
+  xy: 859, 127
+  size: 113, 276
+  orig: 113, 276
+  offset: 0, 0
+  index: -1
+neck
+  rotate: true
+  xy: 1137, 16
+  size: 61, 142
+  orig: 61, 142
+  offset: 0, 0
+  index: -1
+right arm bot
+  rotate: false
+  xy: 1176, 695
+  size: 224, 348
+  orig: 224, 348
+  offset: 0, 0
+  index: -1
+right arm up
+  rotate: true
+  xy: 1137, 79
+  size: 135, 254
+  orig: 135, 254
+  offset: 0, 0
+  index: -1
+right boot
+  rotate: false
+  xy: 1207, 362
+  size: 166, 164
+  orig: 166, 164
+  offset: 0, 0
+  index: -1
+right leg bot
+  rotate: false
+  xy: 583, 50
+  size: 136, 296
+  orig: 136, 296
+  offset: 0, 0
+  index: -1
+right leg top
+  rotate: true
+  xy: 859, 14
+  size: 111, 276
+  orig: 111, 276
+  offset: 0, 0
+  index: -1
+strap left
+  rotate: false
+  xy: 479, 5
+  size: 102, 338
+  orig: 102, 338
+  offset: 0, 0
+  index: -1
+strap right
+  rotate: true
+  xy: 859, 242
+  size: 108, 310
+  orig: 108, 310
+  offset: 0, 0
+  index: -1
