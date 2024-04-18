@@ -1,16 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e3e95a05e4c9774397eeeb7bdee8ccb, type: 3}
-  m_Name: push
-  m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: a1b4641a76e0cf344ac8238e550b8926, type: 2}
-  animationName: push
+version https://git-lfs.github.com/spec/v1
+oid sha256:8822a6246acb22d5f98f6b69e22855cdbd3a6e99ea8481c501598842fddbd4ba
+size 504

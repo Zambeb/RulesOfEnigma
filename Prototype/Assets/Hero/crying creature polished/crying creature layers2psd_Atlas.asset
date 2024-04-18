@@ -1,17 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
-  m_Name: crying creature layers2psd_Atlas
-  m_EditorClassIdentifier: 
-  atlasFile: {fileID: 4900000, guid: 84cb13f4636ae474fb6bac67056d07bd, type: 3}
-  materials:
-  - {fileID: 2100000, guid: 29d5158ef4380174484534514f787986, type: 2}
+version https://git-lfs.github.com/spec/v1
+oid sha256:cfe22ce98d22766b7475f9a396ffdcae48181d3fb5b5c99d60ae8cf2703c9198
+size 585
