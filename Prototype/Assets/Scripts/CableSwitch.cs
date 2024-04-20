@@ -16,7 +16,6 @@ public class CableSwitch : MonoBehaviour
     public AudioSource source;
     public AudioClip splashSound;
     
-    // Start is called before the first frame update
     void Start()
     {
         BossSwitch bossSwitch = GetComponent<BossSwitch>();
@@ -24,12 +23,6 @@ public class CableSwitch : MonoBehaviour
         initialLeverRotation = lever.transform.rotation;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
     public void ActivateSwitch()
     {
         if (!isActive)

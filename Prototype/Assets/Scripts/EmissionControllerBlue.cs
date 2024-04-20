@@ -2,46 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EmissionControllerYellow : MonoBehaviour
+public class EmissionControllerBlue : MonoBehaviour
 {
     public Material material;
     public Material orbMaterial;
     public GameObject[] orbGlowing;
-    public Color emissionColorOn;
-    public Color emissionColorOff;
-    public Color emissionColorOnOrb;
-    public Color emissionColorOffOrb;
+    public Color emissionColorOn; 
+    public Color emissionColorOff; 
+    public Color emissionColorOnOrb; 
+    public Color emissionColorOffOrb; 
 
-    private bool canJump;
+    private bool canGrab;
 
     void Start()
     {
         Renderer renderer = GetComponent<Renderer>();
+        
         if (material != null && renderer != null)
         {
             material.EnableKeyword("_EMISSION");
-            SetEmission(canJump);
+            SetEmission(canGrab);
         }
         
         if (orbMaterial != null && renderer != null)
         {
             orbMaterial.EnableKeyword("_EMISSION");
-            SetEmission(canJump);
+            SetEmission(canGrab);
         }
 
         if (orbGlowing != null && renderer != null)
         {
             foreach (GameObject orbObject in orbGlowing)
             {
-                orbObject.SetActive(canJump);
+                orbObject.SetActive(canGrab);
             }
         }
     }
 
     void Update()
     {
-        canJump = FindObjectOfType<HeroCharacterController>().canJump;
-        SetEmission(canJump);
+        canGrab = FindObjectOfType<HeroCharacterController>().canGrab;
+        SetEmission(canGrab);
     }
 
     void SetEmission(bool isEnabled)
@@ -62,7 +63,7 @@ public class EmissionControllerYellow : MonoBehaviour
         {
             foreach (GameObject orbObject in orbGlowing)
             {
-                orbObject.SetActive(canJump);
+                orbObject.SetActive(canGrab);
             }
         }
     }

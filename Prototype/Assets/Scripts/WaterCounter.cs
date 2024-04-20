@@ -8,14 +8,12 @@ public class WaterCounter : MonoBehaviour
     public WaterCountZone waterZone;
     public ElectricityController electro;
     
-    // Start is called before the first frame update
     void Start()
     {
         WaterCountZone waterZone = GetComponent<WaterCountZone>();
         electro = GetComponent<ElectricityController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (waterZone.inZone)

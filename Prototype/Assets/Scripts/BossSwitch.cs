@@ -14,14 +14,7 @@ public class BossSwitch : MonoBehaviour
 
     public GameObject light;
     public GameObject sparks;
-/*
-    public AudioSource cryingSource;
-    public AudioSource deathSource;
-    public AudioClip cryingSound;
-    public AudioClip deathSound;
-    */
-    
-    // Start is called before the first frame update
+
     void Start()
     {
         WaterBossAnimator waterBossAnimator = GetComponent<WaterBossAnimator>();
@@ -32,7 +25,6 @@ public class BossSwitch : MonoBehaviour
         sparks.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (cableCount >= 2)

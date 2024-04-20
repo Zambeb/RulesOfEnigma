@@ -12,15 +12,14 @@ public class JumpTutorial : MonoBehaviour
     
     public float pulseHeight = 0.01f;
     public float pulseSpeed = 2f;
-    // Start is called before the first frame update
+
     void Start()
     {
         characterController.GetComponent<HeroCharacterController>();
         textKeyboard.SetActive(false);
         textMouse.SetActive(false);
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         float yOffset = Mathf.Sin(Time.time * pulseSpeed) * pulseHeight;

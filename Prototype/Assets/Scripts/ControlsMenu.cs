@@ -11,13 +11,12 @@ public class ControlsMenu : MonoBehaviour
     private GameMaster gm;
 
     public MainMainMenu mainScript;
-    // Start is called before the first frame update
+
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

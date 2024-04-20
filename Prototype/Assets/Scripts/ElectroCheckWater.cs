@@ -6,8 +6,7 @@ using UnityEngine;
 public class ElectroCheckWater : MonoBehaviour
 {
     public WaterCounter waterCount;
-    
-    // Start is called before the first frame update
+
     void Start()
     {
         WaterCounter waterCount = GetComponent<WaterCounter>();

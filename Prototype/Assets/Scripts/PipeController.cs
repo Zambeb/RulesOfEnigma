@@ -25,11 +25,6 @@ public class PipeController : MonoBehaviour
 	    initialLeverRotation = lever.transform.rotation;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void ActivateSwitch()
     {

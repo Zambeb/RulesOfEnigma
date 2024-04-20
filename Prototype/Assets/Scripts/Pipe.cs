@@ -62,7 +62,6 @@ public class Pipe : MonoBehaviour
     {
         if (isMoving)
         {
-            // Передвигаем платформу к целевой позиции
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime*movementSpeed);
             if (!movingAudioSource.isPlaying)
             {
@@ -72,8 +71,7 @@ public class Pipe : MonoBehaviour
                     movingAudioSource.Play();
                 }
             }
-
-            // Проверяем, достигла ли платформа целевой позиции
+            
             if (Vector3.Distance(transform.position, targetPosition) < 0.01f)
             {
                 platformAudioSource.PlayOneShot(deactivationSound);

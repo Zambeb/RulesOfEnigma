@@ -25,11 +25,6 @@ public class CheatMenu : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // Ваш код обновления, если необходимо
-    }
 
     public void AllAbilities()
     {

@@ -25,8 +25,7 @@ public class FirstBossController : MonoBehaviour
 
     private bool isAlive = true;
     private bool isTriggered = false;
-
-    // Start is called before the first frame update
+    
     public void Start()
     {
         StartCoroutine(BossObjectActivationRoutine());
@@ -60,29 +59,20 @@ public class FirstBossController : MonoBehaviour
         }
 
     }
-
-    // Coroutine для активации и деактивации объектов босса
+    
     IEnumerator BossObjectActivationRoutine()
     {
         while (isAlive)
         {
-            // Активируем объекты босса
             ActivateBossObjects(true);
             bossAudioSource.PlayOneShot(switchSound[Random.Range(0, switchSound.Length)]);
-
-            // Ждем заданное время
             yield return new WaitForSeconds(activationDuration);
-
-            // Деактивируем объекты босса
             ActivateBossObjects(false);
             bossAudioSource.PlayOneShot(activationSound[Random.Range(0, activationSound.Length)]);
-
-            // Ждем заданное время перед следующим циклом
             yield return new WaitForSeconds(deactivationDuration);
         }
     }
-
-    // Метод для активации или деактивации объектов босса
+    
     public void ActivateBossObjects(bool activate)
     {
         foreach (GameObject bossObject in bossObjects)
@@ -90,8 +80,7 @@ public class FirstBossController : MonoBehaviour
             bossObject.SetActive(activate);
         }
     }
-
-    // Метод, вызываемый при смерти босса
+    
     public void SetBossDead()
     {
         bossAnimator.Death();
@@ -101,8 +90,6 @@ public class FirstBossController : MonoBehaviour
     private IEnumerator DisableBossModelAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-
-        // Добавьте ваш код здесь, который должен выполниться после задержки
         foreach (GameObject model in bossModel)
         {
             model.SetActive(false);
@@ -111,7 +98,6 @@ public class FirstBossController : MonoBehaviour
         Earthquake();
     }
     
-    // Функция, вызываемая для победы над боссом
     public void DefeatBoss()
     {
         foreach (GameObject bossObject in bossObjects)
@@ -119,15 +105,12 @@ public class FirstBossController : MonoBehaviour
             bossObject.SetActive(false);
         }
         isAlive = false;
-        // Поворачиваем определенный объект на -90 градусов по оси X за одну секунду
         StartCoroutine(RotateObjectOverTime(lever, new Vector3(-90f, 0f, 0f), 1f));
-
         StartCoroutine(ActivateObjectsWithDelays());
 
 
     }
-
-    // Coroutine для вращения объекта за определенное время
+    
     IEnumerator RotateObjectOverTime(GameObject obj, Vector3 targetRotation, float duration)
     {
         float time = 0f;
@@ -174,7 +157,6 @@ public class FirstBossController : MonoBehaviour
         defeatObjects[8].SetActive(true);
         yield return new WaitForSeconds(1f);
         defeatObjects[9].SetActive(true);
-        // Вызываем метод SetBossDead
         SetBossDead();
         Debug.LogError("Boss Defeated");
     }
@@ -182,25 +164,18 @@ public class FirstBossController : MonoBehaviour
     IEnumerator MoveCamera()
     {
         float elapsedTime = 0f;
-        Vector3 initialPosition = cameraObject.transform.position; // Сохраняем начальную позицию
+        Vector3 initialPosition = cameraObject.transform.position; 
 
         while (elapsedTime < 3f)
         {
-            // Применяем измененную позицию
             cameraObject.transform.position = new Vector3(cameraObject.transform.position.x - (moveDistance/3f) * Time.deltaTime, cameraObject.transform.position.y, cameraObject.transform.position.z);
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
-        // Возвращаем объект в изначальное положение
         cameraObject.transform.position = new Vector3(cameraObject.transform.position.x, initialPosition.y, initialPosition.z);
-
-        // Ждем перед опусканием
         yield return new WaitForSeconds(2f);
         
-
-        // Опускаем объект
         elapsedTime = 0f;
         while (elapsedTime < 3f)
         {
@@ -208,10 +183,8 @@ public class FirstBossController : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
         cameraObject.transform.position = initialPosition;
-
-        // Восстанавливаем контроллер персонажа
+        
         if (heroController != null)
         {
             heroController.enabled = true;
@@ -222,7 +195,6 @@ public class FirstBossController : MonoBehaviour
     {
         if (defeatCollider != null)
         {
-            // Используем метод IsTouching для проверки, находится ли игрок внутри триггера
             return defeatCollider.bounds.Intersects(playerTransform.GetComponent<Collider>().bounds);
         }
 

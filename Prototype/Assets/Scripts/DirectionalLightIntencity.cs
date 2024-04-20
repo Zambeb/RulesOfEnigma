@@ -7,7 +7,7 @@ public class DirectionalLightIntensity : MonoBehaviour
     public Light directionalLight;
     public float minIntensity = 0.5f;
     public float maxIntensity = 1.5f;
-    public float changeSpeed = 1.0f; // Скорость смены света
+    public float changeSpeed = 1.0f; 
 
     void Start()
     {
@@ -23,13 +23,10 @@ public class DirectionalLightIntensity : MonoBehaviour
 
     void Update()
     {
-        // Генерируем случайное значение интенсивности
         float targetIntensity = Random.Range(minIntensity, maxIntensity);
         
-        // Интерполируем текущую интенсивность к целевой с учетом скорости
         float newIntensity = Mathf.Lerp(directionalLight.intensity, targetIntensity, changeSpeed * Time.deltaTime);
         
-        // Применяем новую интенсивность
         directionalLight.intensity = newIntensity;
     }
 }

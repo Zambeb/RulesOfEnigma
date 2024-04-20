@@ -40,7 +40,7 @@ public class HeroCharacterController : MonoBehaviour
     private int faceLeftRight;
     public float emissionDuration = 0.1f;
     private bool isFiring = false;
-    public float targetIntensity = 15f; // Целевая интенсивность
+    public float targetIntensity = 15f; 
     public float intensityChangeDuration = 2.0f;
     public bool isOnSlippingSurface;
     private float currentHorizontalInput = 0;
@@ -61,7 +61,7 @@ public class HeroCharacterController : MonoBehaviour
     
     // firing
     [Header("Firing")]
-    public GameObject projectilePrefab;  // Ссылка на префаб снаряда
+    public GameObject projectilePrefab;  
     public float projectileSpeed = 10f;
     public GameObject explosionPrefab; 
     
@@ -80,7 +80,7 @@ public class HeroCharacterController : MonoBehaviour
     private GameObject followingRedProjectile;
 
     //respawn
-    private Vector3 respawnPosition; // Добавим переменную для хранения позиции последнего чекпойнта
+    private Vector3 respawnPosition; 
     private bool isRespawning = false;
     
     //for animation
@@ -128,11 +128,7 @@ public class HeroCharacterController : MonoBehaviour
 
     void Update()
     {
-        // Checking current speed
-        
         float currentSpeed = horizontalInput;
-
-        // Is Grounded
         isGrounded = CheckIfGrounded();
 
         //Moving
@@ -157,7 +153,7 @@ public class HeroCharacterController : MonoBehaviour
                 isGrabbing = true;
                 if (grabbedObject != null)
                 {
-                    grabbedObject.transform.parent = transform; // Присоединяем объект к персонажу
+                    grabbedObject.transform.parent = transform; 
                 } 
             }
             else if (!controlMouse && Input.GetKeyDown(KeyCode.LeftControl))
@@ -166,10 +162,9 @@ public class HeroCharacterController : MonoBehaviour
                 isGrabbing = true;
                 if (grabbedObject != null)
                 {
-                    grabbedObject.transform.parent = transform; // Присоединяем объект к персонажу
+                    grabbedObject.transform.parent = transform;
                 } 
             }
-
         }
         
         
@@ -193,7 +188,7 @@ public class HeroCharacterController : MonoBehaviour
             isGrabbing = false;
             if (grabbedObject != null)
             {
-                grabbedObject.transform.parent = null; // Отсоединяем объект от персонажа
+                grabbedObject.transform.parent = null; 
             } 
         }
         if (!controlMouse && Input.GetKeyUp(KeyCode.LeftControl)||!canGrab)
@@ -201,7 +196,7 @@ public class HeroCharacterController : MonoBehaviour
             isGrabbing = false;
             if (grabbedObject != null)
             {
-                grabbedObject.transform.parent = null; // Отсоединяем объект от персонажа
+                grabbedObject.transform.parent = null;
             } 
         }
 
@@ -305,7 +300,6 @@ public class HeroCharacterController : MonoBehaviour
         }
         if (!isOnSlippingSurface && horizontalInputAbs>0.2)
         {
-            //Обычное движение
             characterController.Move(new Vector3(horizontalInput * runSpeed, 0, 0) * Time.deltaTime);
         }
 
@@ -390,7 +384,6 @@ public class HeroCharacterController : MonoBehaviour
         }
         if (!isOnSlippingSurface && horizontalInputAbs>0.2)
         {
-            //Обычное движение
             characterController.Move(new Vector3(horizontalInput * runSpeed, 0, 0) * Time.deltaTime);
         }
 
@@ -471,10 +464,9 @@ public class HeroCharacterController : MonoBehaviour
                     heroAudioSource.PlayOneShot(explosionSound);
                 }
             }
-
-            // Создаем новый снаряд
+            
             Vector3 spawnPosition = characterLight.transform.position;
-            spawnPosition.y -= 0.3f; // Смещаем по оси Y
+            spawnPosition.y -= 0.3f; 
             spawnPosition.x += horizontalInput*2f;
             GameObject projectileInstance = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
             Rigidbody projectileRigidbody = projectileInstance.GetComponent<Rigidbody>();
@@ -487,12 +479,10 @@ public class HeroCharacterController : MonoBehaviour
             }
 
             projectileRigidbody.useGravity = false;
-
-            // Направляем снаряд вперед с определенной скоростью
+            
             float direction = (faceLeftRight > 0) ? 1f : -1f;
             projectileRigidbody.velocity = new Vector3(direction * projectileSpeed + horizontalInput*projectileSpeed, 0f, 0f);
-
-            // Запускаем корутину для обработки уничтожения через 2 секунды
+            
             StartCoroutine(DestroyProjectile(projectileInstance, 2f));
         }
     }
@@ -503,7 +493,7 @@ public class HeroCharacterController : MonoBehaviour
         {
             float direction = (faceLeftRight > 0) ? -1f : 1f;
             Vector3 spawnPosition = yellowSpawn.transform.position;
-            spawnPosition.x += (0.3f * direction); // Смещаем по оси Y
+            spawnPosition.x += (0.3f * direction); 
             GameObject yellowInstance = Instantiate(yellowPrefab, spawnPosition, Quaternion.identity);
             Rigidbody yellowRigidbody = yellowInstance.GetComponent<Rigidbody>();
             if (yellowRigidbody == null)
@@ -524,7 +514,7 @@ public class HeroCharacterController : MonoBehaviour
         {
             float direction = (faceLeftRight > 0) ? -1f : 1f;
             Vector3 spawnPosition = blueSpawn.transform.position;
-            spawnPosition.x += (0.3f * direction); // Смещаем по оси Y
+            spawnPosition.x += (0.3f * direction); 
             GameObject blueInstance = Instantiate(bluePrefab, spawnPosition, Quaternion.identity);
             Rigidbody blueRigidbody = blueInstance.GetComponent<Rigidbody>();
             if (blueRigidbody == null)
@@ -544,7 +534,7 @@ public class HeroCharacterController : MonoBehaviour
         {
             float direction = (faceLeftRight > 0) ? -1f : 1f;
             Vector3 spawnPosition = redSpawn.transform.position;
-            spawnPosition.x += (0.3f * direction); // Смещаем по оси Y
+            spawnPosition.x += (0.3f * direction); 
             GameObject redInstance = Instantiate(redPrefab, spawnPosition, Quaternion.identity);
             Rigidbody redRigidbody = redInstance.GetComponent<Rigidbody>();
             if (redRigidbody == null)
@@ -589,7 +579,6 @@ public class HeroCharacterController : MonoBehaviour
             {
                 if (!switchController.isActive)
                 {
-                    // Вызываем метод ActivateSwitch() на переключателе
                     switchController.ActivateSwitch();
                 }
                 else
@@ -605,9 +594,7 @@ public class HeroCharacterController : MonoBehaviour
             
             if (pipeController != null && !pipeController.anyMoving)
             {
-                // Вызываем метод ActivateSwitch() на переключателе
                 pipeController.ActivateSwitch();
-                
             }
             if (cableSwitch != null)
             {
@@ -625,8 +612,7 @@ public class HeroCharacterController : MonoBehaviour
     IEnumerator DestroyProjectile(GameObject projectile, float time)
     {
         yield return new WaitForSeconds(0.2f);
-
-        // Останавливаем снаряд и уничтожаем его через 1 секунду
+        
         Rigidbody projectileRigidbody = projectile.GetComponent<Rigidbody>();
         if (projectileRigidbody != null)
         {
@@ -656,10 +642,7 @@ public class HeroCharacterController : MonoBehaviour
     {
         if (other.CompareTag("Death") && !isRespawning)
         {
-            // Установим велосити на -3.0
             //velocity = -3.0f;
-
-            // Запустим корутину для респауна через 3 секунды
             StartCoroutine(RespawnAfterDelay(3.0f));
             heroAudioSource.volume = 1f;
             heroAudioSource.PlayOneShot(deathSound);
@@ -672,8 +655,7 @@ public class HeroCharacterController : MonoBehaviour
             {
                 heroAudioSource.volume = 0.4f;
                 heroAudioSource.PlayOneShot(gainYellowSound);
-
-                // Создаем instance проджектайла, который будет следовать за объектом
+                
                 float direction = (faceLeftRight > 0) ? -1f : 1f;
                 Vector3 spawnPosition = other.transform.position;
                 spawnPosition.y += 5f;
@@ -685,15 +667,12 @@ public class HeroCharacterController : MonoBehaviour
                 }
 
                 yellowRigidbody.useGravity = false;
-
-                // Убеждаемся, что ConstantForce существует
+                
                 ConstantForce constantForce = followingYellowProjectile.GetComponent<ConstantForce>();
                 if (constantForce == null)
                 {
                     constantForce = followingYellowProjectile.AddComponent<ConstantForce>();
                 }
-
-                // Начальная установка силы
                 constantForce.relativeForce = new Vector3(direction * 5f, 5f, 0f);
 
                 StartCoroutine(DestroyProjectile(followingYellowProjectile, 1f));
@@ -709,7 +688,6 @@ public class HeroCharacterController : MonoBehaviour
                 heroAudioSource.volume = 0.4f;
                 heroAudioSource.PlayOneShot(gainBlueSound);
                 
-                // Создаем instance проджектайла, который будет следовать за объектом
                 float direction = (faceLeftRight > 0) ? -1f : 1f;
                 Vector3 spawnPosition = other.transform.position;
                 spawnPosition.y += 5f;
@@ -721,15 +699,13 @@ public class HeroCharacterController : MonoBehaviour
                 }
 
                 blueRigidbody.useGravity = false;
-
-                // Убеждаемся, что ConstantForce существует
+                
                 ConstantForce constantForce = followingBlueProjectile.GetComponent<ConstantForce>();
                 if (constantForce == null)
                 {
                     constantForce = followingBlueProjectile.AddComponent<ConstantForce>();
                 }
-
-                // Начальная установка силы
+                
                 constantForce.relativeForce = new Vector3(direction * 5f, 5f, 0f);
 
                 StartCoroutine(DestroyProjectile(followingBlueProjectile, 1f));
@@ -743,8 +719,7 @@ public class HeroCharacterController : MonoBehaviour
             {
                 heroAudioSource.volume = 0.4f;
                 heroAudioSource.PlayOneShot(gainRedSound);   
-                
-                // Создаем instance проджектайла, который будет следовать за объектом
+
                 float direction = (faceLeftRight > 0) ? -1f : 1f;
                 Vector3 spawnPosition = other.transform.position;
                 spawnPosition.y += 5f;
@@ -757,14 +732,12 @@ public class HeroCharacterController : MonoBehaviour
 
                 redRigidbody.useGravity = false;
 
-                // Убеждаемся, что ConstantForce существует
                 ConstantForce constantForce = followingRedProjectile.GetComponent<ConstantForce>();
                 if (constantForce == null)
                 {
                     constantForce = followingRedProjectile.AddComponent<ConstantForce>();
                 }
 
-                // Начальная установка силы
                 constantForce.relativeForce = new Vector3(direction * 5f, 5f, 0f);
 
                 StartCoroutine(DestroyProjectile(followingRedProjectile, 1f));
@@ -825,7 +798,7 @@ public class HeroCharacterController : MonoBehaviour
             isGrabbing = false;
             if (grabbedObject != null)
             {
-                grabbedObject.transform.parent = null; // Отсоединяем объект от персонажа
+                grabbedObject.transform.parent = null; 
             }
             readyToGrab = false;
             grabbedObject = null;
@@ -857,9 +830,9 @@ public class HeroCharacterController : MonoBehaviour
         isFiring = true;
 
         var emission = fireParticleSystem.emission;
-        emission.enabled = true; // Включаем Emission
-        yield return new WaitForSeconds(emissionDuration); // Ждем указанное время
-        emission.enabled = false; // Выключаем Emission
+        emission.enabled = true;
+        yield return new WaitForSeconds(emissionDuration);
+        emission.enabled = false; 
         isFiring = false;
     }
     
@@ -877,7 +850,7 @@ public class HeroCharacterController : MonoBehaviour
             yield return null;
         }
 
-        characterLight.intensity = startIntensity; // Убедитесь, что интенсивность точно равна начальной интенсивности
+        characterLight.intensity = startIntensity; 
     }
 
     bool CheckIfGrounded()
@@ -919,7 +892,6 @@ public class HeroCharacterController : MonoBehaviour
         characterController.enabled = false;
         currentState = "Idle";
         SetCharacterState(currentState);
-        // временно выключаем CharacterController, чтобы корректно установить позицию
         isRespawning = true;
         foreach (GameObject dScreen in deathScreen)
         {
@@ -927,7 +899,7 @@ public class HeroCharacterController : MonoBehaviour
         }
         float elapsedTime = 0f;
         Color initialColor = fadeImage.color;
-        Color targetColor = new Color(initialColor.r, initialColor.g, initialColor.b, 1f); // Чисто черный цвет с полной прозрачностью
+        Color targetColor = new Color(initialColor.r, initialColor.g, initialColor.b, 1f); 
 
         while (elapsedTime < 3.0f)
         {
@@ -937,13 +909,11 @@ public class HeroCharacterController : MonoBehaviour
         }
         
         fadeImage.color = Color.black;
-
-        // Ждем указанное время
+        
         yield return new WaitForSeconds(delay);
 
         characterController.enabled = true;
 
-        // Сбрасываем флаг
         isRespawning = false;
 
         foreach (GameObject dScreen in deathScreen)
@@ -1039,7 +1009,7 @@ public class HeroCharacterController : MonoBehaviour
     {
         float elapsedTime = 0f;
         Color initialColor = fadeImage.color;
-        Color targetColor = new Color(initialColor.r, initialColor.g, initialColor.b, 1f); // Чисто черный цвет с полной прозрачностью
+        Color targetColor = new Color(initialColor.r, initialColor.g, initialColor.b, 1f); 
 
         while (elapsedTime < fadeDuration)
         {

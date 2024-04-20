@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class WaterRise : MonoBehaviour
 {
-    public Transform pipe; // Объект pipe, который будет использоваться для определения активации поднятия
-    public Transform trigger; // Триггер, который активирует поднятие
+    public Transform pipe;
+    public Transform trigger; 
 
-    public float riseSpeed = 3.0f; // Скорость поднятия
+    public float riseSpeed = 3.0f;
     public float fallSpeed = 0.5f;
-    public float riseDistance = 5.0f; // Расстояние поднятия
-    private Vector3 initialPosition; // Изначальная позиция объекта
+    public float riseDistance = 5.0f; 
+    private Vector3 initialPosition;
 
     public GameObject sparks;
 
@@ -20,7 +20,7 @@ public class WaterRise : MonoBehaviour
     
     public WaterCounter waterCounter;
 
-    private bool isRising = false; // Флаг для определения, поднимается ли объект
+    private bool isRising = false; 
 
     void Start()
     {

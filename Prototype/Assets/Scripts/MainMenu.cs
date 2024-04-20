@@ -13,26 +13,17 @@ public class MainMenu : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip whoosh;
     
-    // Start is called before the first frame update
     void Start()
     {
         controlsMenu.SetActive(false);
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SwitchControls ()
     {
 
     }
-    
 
-    
     public void StartGame()
     {
         if (heroController != null)

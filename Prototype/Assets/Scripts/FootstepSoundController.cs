@@ -42,12 +42,12 @@ public class FootstepSoundController : MonoBehaviour
     {
         heroController = GetComponent<HeroCharacterController>();
         footstepAudioSource = gameObject.AddComponent<AudioSource>();
-        footstepAudioSource.spatialBlend = 0f; // 2D sound
+        footstepAudioSource.spatialBlend = 0f;
         footstepAudioSource.volume = volume;
         walkVolume = volume + 0.2f;
         runVolume = volume;
         dragAudioSource = gameObject.AddComponent<AudioSource>();
-        dragAudioSource.spatialBlend = 0f; // 2D sound
+        dragAudioSource.spatialBlend = 0f;
         
     }
 

@@ -7,16 +7,9 @@ using UnityEngine;
 public class WaterCountZone : MonoBehaviour
 {
     public bool inZone = false;
-    // Start is called before the first frame update
     void Start()
     {
         inZone = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter(Collider other)

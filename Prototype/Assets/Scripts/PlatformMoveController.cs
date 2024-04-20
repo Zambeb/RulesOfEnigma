@@ -42,12 +42,8 @@ public class PlatformMoveController : MonoBehaviour
     {
         if (isMoving)
         {
-            // Передвигаем платформу к целевой позиции
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime*movementSpeed);
-            
 
-
-            // Проверяем, достигла ли платформа целевой позиции
             if (Vector3.Distance(transform.position, targetPosition) < 0.01f)
             {
                 platformAudioSource.PlayOneShot(deactivationSound);
@@ -58,10 +54,8 @@ public class PlatformMoveController : MonoBehaviour
         
         if (isMovingBack)
         {
-            // Передвигаем платформу к целевой позиции
             transform.position = Vector3.MoveTowards(transform.position, initialPosition, Time.deltaTime*movementSpeed);
-
-            // Проверяем, достигла ли платформа целевой позиции
+            
             if (Vector3.Distance(transform.position, initialPosition) < 0.01f)
             {
                 platformAudioSource.PlayOneShot(deactivationSound);

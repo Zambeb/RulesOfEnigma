@@ -12,13 +12,11 @@ public class WaterBossAnimator : MonoBehaviour
     public string currentState;
     public string currentAnimation;
     
-    // Start is called before the first frame update
     void Start()
     {
         Idle();
     }
-
-
+    
     public void Idle()
     {
         currentState = "Idle";

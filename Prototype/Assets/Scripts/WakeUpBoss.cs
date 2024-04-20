@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class WakeUpBoss : MonoBehaviour
 {
-    //public GameObject liftObject;         // объект, который будет подниматься и опускаться
-    public GameObject rotationObject;     // объект, у которого меняется угол поворота
-    //public float liftHeight = 5f;         // высота поднятия
-    public float liftDuration = 3f;       // длительность поднятия
-    public float delayBeforeLower = 2f;  // задержка перед опусканием
+    //public GameObject liftObject;
+    public GameObject rotationObject;
+    //public float liftHeight = 5f;
+    public float liftDuration = 3f;
+    public float delayBeforeLower = 2f;
     public GameObject bossModel;
     public float bossLiftHeight;
 
@@ -73,11 +73,7 @@ public class WakeUpBoss : MonoBehaviour
         while (elapsedTime < liftDuration)
         {
             float liftHeightPerSecond = bossLiftHeight / liftDuration;
-
-            // Получаем значение тряски по оси X, изменяющееся в течение времени
             float shakeAmount = Mathf.Sin(elapsedTime * 50) * 2;
-
-            // Прибавляем тряску к текущей позиции по оси X
             float newXPosition = initialPosition.x + shakeAmount;
 
             rotationObject.transform.Rotate(Vector3.left * (10f / liftDuration) * Time.deltaTime);
@@ -99,7 +95,6 @@ public class WakeUpBoss : MonoBehaviour
             yield return null;
         }
 
-        // Восстанавливаем контроллер персонажа
         if (heroController != null)
         {
             heroController.enabled = true;

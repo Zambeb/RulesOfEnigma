@@ -16,17 +16,10 @@ public class ElectroSwitchController : MonoBehaviour
     public AudioClip lampSoundOn;
     public AudioClip lampSoundOff;
     
-    // Start is called before the first frame update
     void Start()
     {
         ElectricityController electroController = GetComponent<ElectricityController>();
         initialLeverRotation = lever.transform.rotation;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void SwitchElectro()
